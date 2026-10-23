@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { width: 340px; padding: 12px; font-family: sans-serif; font-size: 13px; background: #f9f9f9; }
+    h3 { margin: 0 0 8px; color: #c0392b; }
+    .section { background: white; border-radius: 6px; padding: 10px; margin-bottom: 8px; border: 1px solid #eee; }
+    .section-title { font-weight: bold; font-size: 12px; color: #555; margin-bottom: 6px; }
+    input[type="text"], input[type="number"], input[type="email"], select {
+      width: 100%; margin: 3px 0 6px; padding: 6px;
+      box-sizing: border-box; border: 1px solid #ddd; border-radius: 4px;
+    }
+    button { width: 100%; padding: 9px; margin-top: 4px; cursor: pointer; border: none; border-radius: 4px; font-size: 13px; }
+    .btn-fill   { background: #c0392b; color: white; font-weight: bold; }
+    .btn-save   { background: #2980b9; color: white; }
+    .btn-tatkal { background: #e67e22; color: white; }
+    label { color: #666; font-size: 11px; }
+    .toggle-row { display: flex; align-items: center; gap: 8px; margin: 6px 0; }
+    .toggle-row input[type="checkbox"] { width: auto; margin: 0; }
+    .toggle-row label { font-size: 13px; color: #333; }
+    .status { margin-top: 6px; font-size: 12px; color: green; text-align: center; min-height: 16px; }
+    .tab-row { display: flex; gap: 4px; margin-bottom: 8px; }
+    .tab { flex: 1; padding: 6px; text-align: center; border-radius: 4px; cursor: pointer; border: 1px solid #ddd; font-size: 12px; background: white; }
+    .tab.active { background: #c0392b; color: white; border-color: #c0392b; }
+  </style>
+</head>
+<body>
+  <h3>🚆 IRCTC Fast Filler</h3>
+
+  <div class="tab-row">
+    <div class="tab active" id="tab-p1">Passenger 1</div>
+<div class="tab" id="tab-p2">Passenger 2</div>
+<div class="tab" id="tab-p3">Passenger 3</div>
+  </div>
+
+  <!-- Passenger 1 -->
+  <div id="pax-1" class="section">
+    <div class="section-title">👤 Passenger 1</div>
+    <label>Full Name (ALL CAPS)</label>
+    <input type="text" id="name1" placeholder="e.g. RAHUL SHARMA" />
+    <label>Age</label>
+    <input type="number" id="age1" placeholder="25" />
+    <label>Gender</label>
+    <select id="gender1">
+      <option value="">Select</option>
+      <option value="M">Male</option>
+      <option value="F">Female</option>
+      <option value="T">Transgender</option>
+    </select>
+    <label>Berth Preference</label>
+    <select id="berth1">
+      <option value="">No Preference</option>
+      <option value="LB">Lower Berth</option>
+      <option value="MB">Middle Berth</option>
+      <option value="UB">Upper Berth</option>
+      <option value="SL">Side Lower</option>
+      <option value="SU">Side Upper</option>
+    </select>
+  </div>
+
+  <!-- Passenger 2 -->
+  <div id="pax-2" class="section" style="display:none">
+    <div class="section-title">👤 Passenger 2</div>
+    <label>Full Name (ALL CAPS)</label>
+    <input type="text" id="name2" placeholder="e.g. PRIYA SHARMA" />
+    <label>Age</label>
+    <input type="number" id="age2" placeholder="22" />
+    <label>Gender</label>
+    <select id="gender2">
+      <option value="">Select</option>
+      <option value="M">Male</option>
+      <option value="F">Female</option>
+      <option value="T">Transgender</option>
+    </select>
+    <label>Berth Preference</label>
+    <select id="berth2">
+      <option value="">No Preference</option>
+      <option value="LB">Lower Berth</option>
+      <option value="MB">Middle Berth</option>
+      <option value="UB">Upper Berth</option>
+      <option value="SL">Side Lower</option>
+      <option value="SU">Side Upper</option>
+    </select>
+  </div>
+
+  <!-- Passenger 3 -->
+  <div id="pax-3" class="section" style="display:none">
+    <div class="section-title">👤 Passenger 3</div>
+    <label>Full Name (ALL CAPS)</label>
+    <input type="text" id="name3" placeholder="e.g. AMIT SHARMA" />
+    <label>Age</label>
+    <input type="number" id="age3" placeholder="30" />
+    <label>Gender</label>
+    <select id="gender3">
+      <option value="">Select</option>
+      <option value="M">Male</option>
+      <option value="F">Female</option>
+      <option value="T">Transgender</option>
+    </select>
+    <label>Berth Preference</label>
+    <select id="berth3">
+      <option value="">No Preference</option>
+      <option value="LB">Lower Berth</option>
+      <option value="MB">Middle Berth</option>
+      <option value="UB">Upper Berth</option>
+      <option value="SL">Side Lower</option>
+      <option value="SU">Side Upper</option>
+    </select>
+  </div>
+
+  <!-- Contact -->
+  <div class="section">
+    <div class="section-title">📞 Contact Details</div>
+    <label>Mobile</label>
+    <input type="text" id="mobile" placeholder="10-digit mobile" />
+    <label>Email</label>
+    <input type="email" id="email" placeholder="email@example.com" />
+  </div>
+
+  <!-- Settings -->
+  <div class="section">
+    <div class="section-title">⚙️ Settings</div>
+    <div class="toggle-row">
+      <input type="checkbox" id="autoUpgrade" />
+      <label for="autoUpgrade">Auto-select Consider for Upgradation</label>
+    </div>
+    <div class="toggle-row">
+      <input type="checkbox" id="autoUPI" checked />
+      <label for="autoUPI">Auto-select BHIM/UPI payment</label>
+    </div>
+    <div class="toggle-row">
+      <input type="checkbox" id="autoSubmit" />
+      <label for="autoSubmit">Auto-click Next after fill</label>
+    </div>
+  </div>
+
+  <button class="btn-save" id="save">💾 Save Profile</button>
+  <button class="btn-fill" id="fill">⚡ Fill Form Now</button>
+  <button class="btn-tatkal" id="fillTatkal">🔥 Fill + Next (Tatkal Mode)</button>
+
+  <div class="status" id="status"></div>
+  <script src="popup.js"></script>
+</body>
+</html>

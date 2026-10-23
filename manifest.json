@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "IRCTC Fast Filler",
+  "version": "2.0",
+  "description": "Auto-fill IRCTC forms including Tatkal booking",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "host_permissions": [
+    "https://www.irctc.co.in/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
